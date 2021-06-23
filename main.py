@@ -12,13 +12,10 @@ with open('reddit.txt', 'w') as f:
     f.write('')
 
 headlines = sepHeadlines(trimmedtext)
-print("Separated Headlines")
 for element in headlines:
     print(element)
     with open('reddit.txt', 'a') as f:
         f.write(element + '\n')
-
-
 
 #3. On AWS, there will be a database and table called Headline to load this data. There will also be a table called Wordcount to count the words in the headlines.
 #4. The Python script will access the database using environmental variables, and insert a row into the Headline table for each headline.
