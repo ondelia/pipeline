@@ -19,6 +19,10 @@ def trimText(text):
 
     trimmedText = re.sub(r'"title":', r'"title":\n\n', trimmedText)
     trimmedText = re.sub(r',"topAwardedType":"ACTIVE', r'', trimmedText)
+    trimmedText = re.sub(r',"topAwardedType":"INACTIVE', r'', trimmedText)
+
+    trimmedText = re.sub(r'\\x..', r'', trimmedText)
+    trimmedText = re.sub(r'\\', r'', trimmedText)
 
     trimmedText = re.sub(r'"\n', r'\n', trimmedText)
     trimmedText = re.sub(r'\n"', r'\n', trimmedText)
